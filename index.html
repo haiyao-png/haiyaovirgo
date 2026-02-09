@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人音乐播放器</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="music-player">
+        <header class="player-header">
+            <h1>个人音乐播放器</h1>
+        </header>
+        
+        <main class="player-main">
+            <div class="album-cover">
+                <img src="https://trae-api-cn.mchost.guru/api/ide/v1/text_to_image?prompt=music%20album%20cover%20minimalist%20design&image_size=square" alt="专辑封面">
+            </div>
+            
+            <div class="song-info">
+                <h2 id="song-title">歌曲标题</h2>
+                <p id="song-artist">艺术家</p>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progress-bar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="time-info">
+                    <span id="current-time">0:00</span>
+                    <span id="total-time">0:00</span>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="prev-btn" class="control-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="19 20 9 12 19 4 19 20"></polygon>
+                        <line x1="5" y1="19" x2="5" y2="5"></line>
+                    </svg>
+                </button>
+                <button id="play-btn" class="control-btn play-btn">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                </button>
+                <button id="next-btn" class="control-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polygon points="5 4 15 12 5 20 5 4"></polygon>
+                        <line x1="19" y1="5" x2="19" y2="19"></line>
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="volume-control">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+                    <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+                    <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+                </svg>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.01" value="0.7">
+            </div>
+        </main>
+        
+        <footer class="player-footer">
+            <h3>播放列表</h3>
+            <ul class="playlist" id="playlist">
+                <!-- 播放列表将通过JavaScript动态生成 -->
+            </ul>
+        </footer>
+    </div>
+    
+    <audio id="audio-element"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
